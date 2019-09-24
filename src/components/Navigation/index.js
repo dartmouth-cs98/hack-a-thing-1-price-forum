@@ -53,7 +53,7 @@ const Navigation = ({ authUser }) => (
   <nav className={'deep-purple darken-1'}>
          <div className={"nav-wrapper"}>
            <div className="navbar-header">
-             <Link to="/" className="navbar-brand">Faraj App</Link>
+             <Link to="/" className="navbar-brand">Price Board</Link>
            </div>
            <AuthUserContext.Consumer>
              {authUser =>
@@ -100,17 +100,7 @@ const NavigationAuth = () => (
 
 const NavigationNonAuth = () => (
   <ul className={'right'}>
-        <li>
-          <Link to={ROUTES.LANDING}>
-            <a className={'white-text'}>Landing</a>
-          </Link>
-        </li>
-        <li>
-          <Link to={ROUTES.SIGN_IN}>
-            <a className={'white-text'}>Sign In</a>
-          </Link>
-        </li>
-
+      
   </ul>
 
 );
