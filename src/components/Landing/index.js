@@ -1,10 +1,18 @@
 import React, {Component}  from 'react';
 import { withFirebase } from '../Firebase';
+import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 
 
 
-class LandingPage extends Component {
+const LandingPage = () => (
+  <div>
+    <LandingForm />
+  </div>
+);
+
+
+class LandingBase extends Component {
   constructor(props) {
     super(props);
 
@@ -51,7 +59,6 @@ class LandingPage extends Component {
 
         this.setState({
           products: productList,
-
           loading: false,
         });
       }else{
@@ -110,10 +117,13 @@ class LandingPage extends Component {
   }
 }
 
-const Landing = compose(
-  withFirebase,
-)(LandingPage);
+// const Landing = compose(
+//   withFirebase,
+//   withRouter,
+// )(LandingPage);
 
-// export default LandingPage;
+export default LandingPage;
 
-export default { Landing };
+const LandingForm = withFirebase(LandingBase);
+
+export  { LandingForm };
